@@ -6,11 +6,11 @@ This repository contains topic-wise notes to help prepare for the **AWS Certifie
 ## 📂 Topics Covered
 
 ### 📁 Intro
-- [Security and Compliance](./Intro/Security%20and%20Compliance.txt)
+- [Security and Compliance](./Intro/Security%20and%20Compliance.md)
 
 ### 📁 AWS Services
-- [Amazon EC2](./AWS%20services/EC2.txt)
-- [Amazon S3](./AWS%20services/S3.txt)
+- [Amazon EC2](./AWS%20services/EC2.md)
+- [Amazon S3](./AWS%20services/S3.md)
 
 
 ## 💡 How to Use
