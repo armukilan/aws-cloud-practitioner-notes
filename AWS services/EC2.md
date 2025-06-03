@@ -1,10 +1,14 @@
 # AWS EC2
 
-Secure and resizable compute capacity for virtually any workload
+Secure and resizable compute capacity for virtually any workload - Amazon EC2 is a web service that provides resizable compute capacity in the cloud. It is designed to make web-scale computing easier for developers.
 
 ## Why Amazon EC2?
 
 Amazon Elastic Compute Cloud (Amazon EC2) offers the broadest and deepest compute platform, with over 750 instances and choice of the latest processor, storage, networking, operating system, and purchase model to help you best match the needs of your workload. We are the first major cloud provider that supports Intel, AMD, and Arm processors, the only cloud with on-demand EC2 Mac instances, and the only cloud with 400 Gbps Ethernet networking. We offer the best price performance for machine learning training, as well as the lowest cost per inference instances in the cloud. More SAP, high performance computing (HPC), ML, and Windows workloads run on AWS than any other cloud.
+
+### What can I do with Amazon EC2?
+
+Just as Amazon Simple Storage Service (Amazon S3) enables storage in the cloud, Amazon EC2 enables “compute” in the cloud.  The Amazon EC2 simple web service interface allows you to obtain and configure capacity with minimal friction. It provides you with complete control of your computing resources and lets you run on Amazon’s proven computing environment. Amazon EC2 reduces the time required to obtain and boot new server instances to minutes, allowing you to quickly scale capacity, both up and down, as your computing requirements change. Amazon EC2 changes the economics of computing by allowing you to pay only for capacity that you actually use.
 
 ## Benefits of Amazon EC2
 
@@ -29,10 +33,13 @@ Amazon Elastic Compute Cloud (Amazon EC2) offers the broadest and deepest comput
 - **Memory Optimized** - Memory optimized instances are designed to deliver fast performance for workloads that process large data sets in memory.
 
 - **Accelerated Computing** - Accelerated computing instances use hardware accelerators, or co-processors, to perform functions, such as floating point number calculations, graphics processing, or data pattern matching, more efficiently than is possible in software running on CPUs.
+(The Accelerated Computing instance category includes instance families that use hardware accelerators, or co-processors, to perform some functions, such as floating-point number calculation and graphics processing, more efficiently than is possible in software running on CPUs. Amazon EC2 provides a broad choice of accelerators including GPUs, purpose built AI chips AWS Trainium and AWS Inferentia, FPGAs and more.)
 
 - **Storage Optimized** - Storage optimized instances are designed for workloads that require high, sequential read and write access to very large data sets on local storage. They are optimized to deliver millions of low-latency, random I/O operations per second (IOPS) to applications
 
 - **HPC Optimized** - High performance computing (HPC) instances are purpose built to offer the best price performance for running HPC workloads at scale on AWS. HPC instances are ideal for applications that benefit from high-performance processors such as large, complex simulations and deep learning workloads.
+
+**What are Amazon EC2 UltraServers** - Amazon EC2 UltraServers are ideal for customers seeking the highest AI training and inference performance for models at the trillion-parameter scale. UltraServers connect multiple EC2 instances using a dedicated, high-bandwidth, low-latency accelerator interconnect, so you can use a tightly coupled mesh of accelerators across EC2 instances and access significantly more compute and memory than standalone EC2 instances.
 
 ## Instance Features
 
