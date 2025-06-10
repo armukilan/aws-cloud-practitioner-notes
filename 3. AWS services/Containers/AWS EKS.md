@@ -1,6 +1,9 @@
 # AWS EKS
 
-Start, run, and scale Kubernetes without thinking about cluster management
+- Elastic kubernetes service (EKS) this is a fully managed kubernetes service 
+- Kubernetes (K8) is an open-source orchestration software that was created by Google is generally the standard for managing microservices 
+- When you need to run kubernetes as a service
+
 
 ## Long Answer
 

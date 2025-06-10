@@ -1,5 +1,14 @@
 # AWS Fargate
 
+
+- ECS fargate or just fargate (people forgets it runs on ECS) is a servess orchestration container service. 
+- It is the same as ECS except you pay on demand per running containers (with ECS you have to keep a ec2 server running even if you have no containers running) 
+- AWS manages the underlying server so you don't have to scale or upgrade the ec2 server
+
+
+
+
+
 Fargate is a serverless compute engine for containers that works with both Amazon Elastic Container Service (Amazon ECS) and Amazon Elastic Kubernetes Service (Amazon EKS).
 With Fargate, you can focus on building your applications by eliminating the need to provision and manage virtual machines. 
 Configure and pay for compute resources on a per-application basis while also improving your security posture with application isolation by design.
