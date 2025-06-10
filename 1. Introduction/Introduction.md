@@ -178,3 +178,88 @@ Some more
 - Scalable
 - Elastic
 - Current
+
+
+## Solution Architect
+
+A role in a technical organization that Architects a technical solution using multiple systems via researching documentation and experimentation
+
+## Cloud Architect
+
+Solutions architect that is focused solely on architecting Technical Solutions using cloud services
+
+cloud architect needs to understand the following terms and factors and factor them into their designed architecture based on the business requirements:
+
+- availability: your ability to ensure service remains available (High availability)
+- Scalability: your ability to grow rapidly or unimpeded
+- elasticity: your ability to shrink and grow to meet the demand 
+- fault tolerance: your ability to prevent a failure
+- disaster recovery: your ability to recover from a failure
+
+Two questions - how secure is the solution and how much is this going to cost
+
+
+## Availability
+
+- Your ability for your service to remain available by ensuring there is no single point of failure and ensure a certail level of performance
+- you'd want to run your workload across multiple availability zones to ensure that if one or two availability zones became unavailable your servers or applications remain available
+- we would accomplish that is via elastic load balancer so a load balancer allows you to evenly distribute traffic to multiple servers in one or more data center if a data center or server becomes unavailable or unhealthy the load bouncer will route the traffic to only the available data centers within the server 
+
+## Scalability
+
+- increase your capacity based on on the increasing demand of traffic memory and computing power.
+- Vertical - Scaling up - Upgrading to bigger server
+- Horrizontal - Scaling out - Add more servers of same size
+
+## Elasticity
+
+- ability to automatically increase or decrease Your Capacity based on the current demand of traffic memory and computing power
+- horizontal scaling we have the concept of scaling out so add more servers of the same size horizontal scaling we have the concept of scaling out so add more servers of the same size
+- autoscaling groups (asg) and this is an AWS feature that will automatically add or remove servers based on scaling rules you define based on those metrics 
+
+## Fault tolerant
+
+- Ability for your service to ensure there is no single point of failure preventing the chance of failure 
+- the way we could do that is with fail overs so this is when you have a plan to shift traffic to a redundant system in case the primary system fails 
+- a very common example is having a copy (secondary) of your database where all ongoing changes are synced. the secondary system is not in use until a fail over occurs and it becomes the primary database
+- RDS multi-az - when you run a duplicate standby database in another availability Zone in the case your primary database fails
+
+## High Durability
+
+- your ability to recover from a disaster and to prevent the loss of data. solutions that recover from a disaster is known as disaster recovery 
+- so do you have a backup 
+- how fast can you restore the backup 
+- does your backup still work 
+- how do you ensure current live data is not corrupt
+- Cloud endure disaster recovery service which continuously replicates your machines in a lowcost staging area in your target AWS account and preferred region enabling fast and reliable recovery in the case of an IT data center failures.
+
+## Business continuity plan
+
+- BCP is a document that outlines how a business will continue operating during an unplanned disruption in services
+- recovery Point objective is the maximum acceptable amount of data loss after an unplanned data loss incident exprressed as an amount of time
+- recovery time objective the maximum amount of downtime your business can tolerate without inuring a significant financial loss
+
+[bcp](bcp1.png)
+
+## Disaster recovery option
+
+- There are multiple options for recovery that trade cost vs time to recover
+
+[bcp](bcp2.png)
+[Disaster recovery](https://docs.aws.amazon.com/pdfs/whitepapers/latest/disaster-recovery-of-on-premises-applications-to-aws/disaster-recovery-of-on-premises-applications-to-aws.pdf#recovery-objectives)
+
+## RTO - As in whitepaper
+
+maximum acceptable delay between the interruption of service and restoration of service. this objective determines the uh what is considered an acceptable time window when service is unavailable and is defined by the organization
+
+[rto](rto.png)
+
+## RPO - As in whitepaper
+
+recovery Point objective is the maximum acceptable amount of time since the last data recovery point the objective determines what is considered an acceptable loss of data between the last recovery point and the interruption of service and it's defined by the organization 
+
+[rpo](rpo.png)
+
+
+AWS Architecture icons : [Diagrams](https://aws.amazon.com/architecture/icons/)
+

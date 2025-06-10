@@ -1,14 +1,17 @@
 # AWS EC2
 
-Secure and resizable compute capacity for virtually any workload - Amazon EC2 is a web service that provides resizable compute capacity in the cloud. It is designed to make web-scale computing easier for developers.
-
-## Why Amazon EC2?
-
-Amazon Elastic Compute Cloud (Amazon EC2) offers the broadest and deepest compute platform, with over 750 instances and choice of the latest processor, storage, networking, operating system, and purchase model to help you best match the needs of your workload. We are the first major cloud provider that supports Intel, AMD, and Arm processors, the only cloud with on-demand EC2 Mac instances, and the only cloud with 400 Gbps Ethernet networking. We offer the best price performance for machine learning training, as well as the lowest cost per inference instances in the cloud. More SAP, high performance computing (HPC), ML, and Windows workloads run on AWS than any other cloud.
-
-### What can I do with Amazon EC2?
-
-Just as Amazon Simple Storage Service (Amazon S3) enables storage in the cloud, Amazon EC2 enables “compute” in the cloud.  The Amazon EC2 simple web service interface allows you to obtain and configure capacity with minimal friction. It provides you with complete control of your computing resources and lets you run on Amazon’s proven computing environment. Amazon EC2 reduces the time required to obtain and boot new server instances to minutes, allowing you to quickly scale capacity, both up and down, as your computing requirements change. Amazon EC2 changes the economics of computing by allowing you to pay only for capacity that you actually use.
+- Secure and resizable compute capacity for virtually any workload
+- It is designed to make web-scale computing easier for developers.
+- Allows you to launch VM (VM is an emulation of a physical computer usin software. Server virtualization allows you to easily create, copy, resize or migrate your server).
+- Multiple VM can run on same physical server, so you can share the cost with others.
+- When we launch a virtual machine, we call it an "instance"
+- Highly configurable
+	- Amount of CPU (Intel, AMD, and Arm processors)
+	- Amount of RAM
+	- Network bandwidth (400 Gbps Ethernet networking)
+	- OS (Windows, Ubuntu, Amazon Linux, MAC) (An AMI - Amazon machine Image is a predefined configuration for a VM)
+	- Attach multiple Block storage (EBS)
+- EC2 is the backbone of AWS - most of the service use EC2 - S3, RDS, DynamoDB, Lambda 
 
 ## Benefits of Amazon EC2
 
@@ -16,6 +19,29 @@ Just as Amazon Simple Storage Service (Amazon S3) enables storage in the cloud, 
 - **AWS Nitro System** : Provide secure compute for your applications. Security is built into the foundation of Amazon EC2 with the AWS Nitro System.
 - **Optimize performance and cost** : Optimize performance and cost with flexible options like AWS Graviton-based instances, Amazon EC2 Spot instances, and AWS Savings Plans.
 - **AWS Migration Tools** : Migrate and build apps with ease using AWS Migration Tools, AWS Managed Services, or Amazon Lightsail. Learn how AWS can help.
+
+
+
+## Nitro System
+
+- A combination of dedicated hardware and lightweight hypervisor enabling faster Innovation and enhanced security 
+- All new ec2 instant types use the nitro system
+	- Nitro Cards : specialized cards for VPS, EBS, instant storage and controller cards
+	- Nitro security chips : these are integrated into the motherboard protects Hardware resources
+	- Nitro hypervisor : lightweight hyper visor memory and CPU allocation bare metal like performance
+	- Nitro enclaves?
+
+
+## Bare Metal Instance
+
+- You can launch EC2 instances that have no hypervisor so you can run workloads directly on the hardware for maximum performance and control.
+- We have the M5 and R5 EC2 instances that can run bare metal
+- **Bottle rocket** This is a Linux based open source operating system that is purpose built by AWS for running containers on VMs or bare metal hosts
+
+
+
+
+
 
 ## Use cases
 
@@ -41,27 +67,41 @@ Just as Amazon Simple Storage Service (Amazon S3) enables storage in the cloud, 
 
 **What are Amazon EC2 UltraServers** - Amazon EC2 UltraServers are ideal for customers seeking the highest AI training and inference performance for models at the trillion-parameter scale. UltraServers connect multiple EC2 instances using a dedicated, high-bandwidth, low-latency accelerator interconnect, so you can use a tightly coupled mesh of accelerators across EC2 instances and access significantly more compute and memory than standalone EC2 instances.
 
-## Instance Features
 
-Amazon EC2 instances provide a number of additional features to help you deploy, manage, and scale your applications.
+## High Performance Computing
 
-Amazon EC2 allows you to choose between Fixed Performance instance families (e.g. M6, C6, and R6) and Burstable Performance Instance families (e.g. T3). Burstable Performance Instances provide a baseline level of CPU performance with the ability to burst above the baseline.
+- A cluster of a hundred of thousands of servers with fast connections between each of them with the purpose of boosting Computing capacity 
+- When you need a supercomputer to perform computational problems too large to run on a standard computer or computers or would take too long.
+- **AWS Parallel cluster** which is an AWS supported open source cluster management tool that makes it easy for you to deploy and manage higher performance Computing HPC clusters on AWS.
 
-### 🔹 Burstable Performance with CPU Credits
-T instances work based on a CPU credit system:
 
-- **Baseline Performance** : Each T instance has a baseline level of CPU performance based on its size (e.g., t3.micro, t3.medium).
-- **Burst Capability** : When more CPU is needed, the instance can burst beyond the baseline.
-- **CPU Credits** :
-	- Earned when the instance is idle or using less than the baseline.
-	- Spent when the instance uses more than the baseline.
-	- 1 CPU Credit = 1 vCPU at 100% for 1 minute.
-	- ✅ Example: If your t3.small instance is idle for 10 minutes, it earns 10 CPU credits. Later, it can use those credits to run at full CPU power for 10 minutes.
+## Cost and Capacity Management
 
-### 🔹 T Unlimited Mode
-T instances can be launched in T Unlimited mode, which provides even more flexibility:
+- Cost - How do we save money?
+- Capacity - How do we meet the demand of traffic and usages through adding or upgrading servers
 
-- **Sustained High Performance**: If your workload requires constant high CPU, the instance continues running without throttling—even if it runs out of CPU credits.
-- **Smart Billing** :
-	- If your average CPU usage stays at or below the baseline during a 24-hour window, no extra charges.
-	- If it exceeds the baseline, you are billed a small amount: $0.05 per vCPU-hour of surplus usage.
+## EC2 spot instances reserved instances saving plans 
+
+-  ways to save on Computing by paying up in full or partially or by committing to a yearly contract or multi-year contract or by being flexible about the availability and interruption to Computing Services 
+
+## AWS batch 
+
+- plans, schedules and executes your batch computing workloads across the full range of AWS computing Services which can utilize spot instances to save money 
+
+## AWS compute Optimizer 
+
+- suggest how to reduce cost and improve performance by using machine learning to analyze your previous usage history.
+
+## EC2 auto scan groups (ASGs) 
+
+- Automatically add or remove EC2 servers to meet the current demand all of traffic 
+- They will save you money and meet capacity since you only run the amount of servers you need 
+
+## Elastic load balancer 
+
+- This distributes traffic to multiple instances, can reroute traffic from unhealthy instances to healthy instances and can route traffic to EC2 instances running in different availability zones
+
+## Elastic Beanstalk (ELB)
+
+- ELB is for easy deploying web applications without developers having to worry about setting up and understanding the underlying ad Services. 
+- Similar to Heroku 
