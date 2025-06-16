@@ -27,3 +27,28 @@
 
 [More](serv1.png)
 [More](serv2.png)
+
+# Bigdata
+- Term used to describe massive volumes of structured and unstructured data that is so large it is difficult to move and process using traditional DB and software technique.
+
+## Some services
+
+[Bigdata](bigdata1.png)
+[Bigdata](bigdata2.png)
+
+## Amazon Quicksight
+
+[Quicksight](bigdata3.png)
+
+## Some more services
+
+[Quicksight](bigdata4.png)
+
+## Gen AI
+
+- Type of AI capable of generating new content, such as text, images, music or other forms of media
+[Different AIs](bigdata5.png)
+
+## Apache MXNet
+
+[Details](bigdata6.png)
