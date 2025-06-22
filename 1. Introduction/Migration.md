@@ -14,3 +14,26 @@
 # Migration Evaluator
 
 [Migration](mig3.png)
+
+# EC2 VM Import/Export
+
+- Allows users to import VM images into EC2
+- Has import instruction for:
+	- VmWare
+	- Citrix
+	- Microsoft Hyper V
+	- Windows VHD from Azure
+	- Linux VHD from Azure
+
+[Process](mig4.png)
+
+# Database Migration Service
+
+[DMS](mig5.png)
+
+# AWS Cloud Adoption Framework
+
+- See the Whitepaper and website
+
+[CAF](mig6.png)
+
