@@ -1,11 +1,13 @@
 # Database
 
+## What is Database?
+
 - Database is a data store that stores semi-structured and structured data
 - Database stores more complex data stores because it requires using formal design and modeling techniques
 
 - Databases can generally be categorized into two categories: 
-	- Relational Database : Stores data in structured tables with predefined schemas and relationships using SQL.
-	- Non-relational Databases: Semi-structured, may or may not resemble tabular data. Stores data in flexible, schema-less formats like key-value, document, column, or graph models.
+	- **Relational Database** : Stores data in structured tables with predefined schemas and relationships using SQL.
+	- **Non-relational Databases**: Semi-structured, may or may not resemble tabular data. Stores data in flexible, schema-less formats like key-value, document, column, or graph models.
 
 <!-- - Functionality of the databases 
 	- Special specialized language to query so retrieve data so in this case SQL 
@@ -14,6 +16,23 @@
 
 - Normally a database infers someone is usually using a a relational row oriented data store
  -->
+
+## Database categpries in AWS
+
+| **Relational**  | **Non-Relational**  | 
+|-----------------|---------------------|
+| Amazon RDS      | Amazon DynamoDB     |
+| Amazon Aurora   | Amazon DocumentDB   |
+|                 | Amazon Elasticache  |
+|                 | Amazon MemoryDB     |
+|                 | Amazon Neptune      |
+|                 | Amazon Keyspaces    |
+|                 | Amazon Timestream   |
+|                 | Amazon QLDB         |
+
+
+
+
 ![Muki](./database-services.png)
 
 ## Key-Value store
