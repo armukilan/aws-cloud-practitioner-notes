@@ -9,15 +9,9 @@
 	- **Relational Database** : Stores data in structured tables with predefined schemas and relationships using SQL.
 	- **Non-relational Databases**: Semi-structured, may or may not resemble tabular data. Stores data in flexible, schema-less formats like key-value, document, column, or graph models.
 
-<!-- - Functionality of the databases 
-	- Special specialized language to query so retrieve data so in this case SQL 
-	- Specialized modeling strategies to optimize retrieval for different use cases 
-	- More fine-tune control over the transformation of the data into useful data structures or reports 
 
-- Normally a database infers someone is usually using a a relational row oriented data store
- -->
 
-## Database categpries in AWS
+## Database categories in AWS
 
 | **Relational**  | **Non-Relational**  | 
 |-----------------|---------------------|

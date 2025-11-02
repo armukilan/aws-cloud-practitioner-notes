@@ -1,30 +1,111 @@
 # AWS Global Infrastructure
 
-Globally distributed hardware and datacenter that are physically networked together to act as one large resource for the end customer.
+## Introduction
+
+AWS Global Infrastructure refers to the worldwide network of data centers, servers, and networking facilities that are physically networked together to deliver cloud computing services with high availability, scalability, and low latency to the customers.
+
 
 The day I made this:
-- Launched region - 36
+- Launched region - 38
 - Availability ZOne - 114
 - 700+ CloudFront POPs (Point of Presence) and 13 Regional edge caches
 - 135 Direct Connect locations
 - 245 countries and territories served
 - 43 Local Zones, 31 Wavelength Zones for ultralow-latency applications
 
+## Core Componenets of AWS Global infrastructure
+
+| **Component**                  |                                            **Description**                                                                                      |
+|--------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Regions**                    | Geographical areas (like US East (N. Virginia), Asia Pacific (Mumbai)) where AWS clusters its data centers. Each region operates independently. |
+| **Availability Zones (AZs)**   | Physically separate data centers within a region — typically 3 or more per region — designed for fault tolerance and high availability.         |
+| **Edge Locations**             | Data centers used by Amazon CloudFront (CDN) to cache content closer to users for faster delivery.                                              |
+| **Regional Edge Caches**       | Larger caches that sit between AWS Regions and Edge Locations to further optimize content delivery.                                             |
+| **Local Zones**                | Extensions of AWS Regions that bring compute, storage, and database services closer to end-users in specific metro areas.                       |
+| **Wavelength Zones**           | Infrastructure embedded in telecom networks to deliver ultra-low latency for mobile and 5G applications.                                        |
+| **Outposts**                   | Physical AWS hardware deployed on-premises to bring AWS services directly into customer data centers.                                           |
+
+
 ## Regions
 
-- Geographically distinct locations consisting of one or more availability zone. Every region is phisically isolated from and independent of every other region by location, power andd water supply
-- AWS first region - 2006 - us-east1 (N. Virginia)
-- Each region generally has 3 availability zone
-	- some new users are limited to two eg. US-West
-- new Services almost always become available first in Us East
--  not all services are available in all regions
-- all your billing information appears in Us East one
+- A Region is a geographically distinct area in the world where AWS has a cluster of data centers.
+- Each Region is made up of multiple, isolated Availability Zones (AZs), usually 3 or more (some new users are limited to two), that are physically separate but connected through high-speed, low-latency networks.
+- Unlike other cloud providers, who often define a region as a single data center, the multiple AZ design of every AWS Region offers advantages for customers. 
+- Each AZ has independent power, cooling, and physical security and is connected via redundant, ultra-low-latency networks.
+- AWS customers focused on high availability can design their applications to run in multiple AZs to achieve even greater fault-tolerance. 
+- AWS infrastructure Regions meet the highest levels of security, compliance, and data protection.
 - The cost of AWS Services vary per region
 - 4 factors to look for
 	- what are the Regulatory Compliance does this region meet 
 	- what is the cost of this aws service in this region 
 	- what AWS services are available in this region 
 	- what is the distance distance or latency to my end users
+-  not all services are available in all regions
+
+
+### List of all the geographical regions for AWS
+
+| **Area / Continent**          | **Region Name**                 |**Region Code** | **No. of AZ.**   |  **Launched**  |
+|-------------------------------|---------------------------------|----------------|------------------|----------------|
+| **North America**             | US East (N. Virginia)           | us-east-1      |      6           |    2006        |
+|                        		| US West (N. California)         | us-west-1      |      3           |    2009        |
+|                        		| US West (Oregon)                | us-west-2      |      4           |    2011        |
+|                               | AWS GovCloud (US-West)		  | us-gov-west-1  |      3			  |    2011        |
+|								| US East (Ohio)                  | us-east-2      |      3           |    2016        |
+|								| Canada (Central)                | ca-central-1   |      3           |    2016        |
+|								| AWS GovCloud (US-East)		  | us-gov-east-1  |      3           |    2018        |
+|                        		| Canada West (Calgary)           | ca-west-1      |      3           |    2023        |
+|                        		| Mexico (Central)                | mx-central-1   |      3           |    2025        |
+| **South America**      		| South America (São Paulo)       | sa-east-1      |      3           |    2011        |
+|								| South America (Chilie)          | Comming soon   |                  |                |
+| **Europe**             		| Europe (Ireland)                | eu-west-1      |      3           |    2007        |
+|                        		| Europe (Frankfurt)              | eu-central-1   |      3           |    2014        |
+|								| Europe (London) 	              | eu-west-2 	   |      3           |    2016        | 
+|                        		| Europe (Paris)                  | eu-west-3      |      3           |    2017        |
+|                        		| Europe (Stockholm)              | eu-north-1     |      3           |    2018        |
+|                        		| Europe (Milan)                  | eu-south-1     |      3           |    2020        |
+|								| Europe (Spain)                  | eu-south-2     |      3           |    2022        |
+|								| Europe (Zurich)                 | eu-central-2   |      3           |    2022        |
+|								| AWS European Soverign Cloud     | Comming soon   |                  |                |
+| **Middle East**        		| Middle East (Bahrain)           | me-south-1     |      3           |    2019		   |
+|                        		| Middle East (UAE)               | me-central-1   |      3           |    2022        |
+|								| Israel (Tel Aviv)               | il-central-1   |      3           |    2023        |
+|								| Kingdom of Saudi Arabia		  | Comming soon   |                  |                |
+| **Africa**             		| Africa (Cape Town)              | af-south-1     |      3			  |    2020		   |
+| **Asia Pacific**       		| Asia Pacific (Singapore)        | ap-southeast-1 |      3           |    2010        |
+|                        		| Asia Pacific (Tokyo)            | ap-northeast-1 |      4			  |    2011        |
+|								| Asia Pacific (Mumbai)           | ap-south-1     |      3			  |    2016        |
+|								| Asia Pacific (Seoul)            | ap-northeast-2 |      3			  |    2016        |
+|								| Asia Pacific (Hong Kong)        | ap-east-1 	   |      3			  |    2019        |
+|								| Asia Pacific (Okasa)            | ap-northeast-3 |      3			  |    2021        |
+|								| Asia Pacific (Jakarta)          | ap-southeast-3 |      3			  |    2021        |
+|                        		| Asia Pacific (Hyderabad)        | ap-south-2     |      3			  |    2022        |
+|                        		| Asia Pacific (Malaysia)         | ap-southeast-5 |      3			  |    2024        |
+|                        		| Asia Pacific (Thailand)         | ap-southeast-7 |      3			  |    2025        |
+|                        		| Asia Pacific (Taipei)           | ap-east-2      |      3           |    2025        |
+|								| Mainland China (Beijing)		  |	cn-north-1	   |      3			  |	   2013		   |
+|								| Mainland China (Ningxia)		  |	cn-northwest-1 |      3			  |	   2017		   |
+| **Australia & New Zealand**   | Australia (Sydney)			  |	ap-southeast-2 |      3			  |	   2012 	   |
+|								| Australia (Melbourne)			  |	ap-southeast-4 |      3			  |	   2023	       |
+|								| Asia Pacific (New Zealand)      | ap-southeast-6 |      3			  |    2025 	   |
+
+
+
+### US-East-1
+- First one to be launched
+- New Services almost always become available first in this region
+- All your billing information appears in this region.
+
+### Mainland China
+
+- AWS China regions are operated by local Chinese partners (Beijing Sinnet and Ningxia NWCD) due to regulatory requirements.
+- They are isolated from other AWS global regions, so accounts and services are separate.
+
+
+
+
+
+
 
 
 ## Regional Services
