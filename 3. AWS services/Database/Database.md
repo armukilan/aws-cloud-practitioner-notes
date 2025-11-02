@@ -3,16 +3,18 @@
 - Database is a data store that stores semi-structured and structured data
 - Database stores more complex data stores because it requires using formal design and modeling techniques
 
-- Databases can generally be categorized as either being: 
-	- Relational so structured data that strongly represents tabular data so we're talking about tables rows and columns so there's a concept of row oriented or column oriented 
-	- Non relational databases so these are semi-structured that may or may not resemble tabular data
+- Databases can generally be categorized into two categories: 
+	- Relational Database : Stores data in structured tables with predefined schemas and relationships using SQL.
+	- Non-relational Databases: Semi-structured, may or may not resemble tabular data. Stores data in flexible, schema-less formats like key-value, document, column, or graph models.
 
-- Functionality of the databases 
+<!-- - Functionality of the databases 
 	- Special specialized language to query so retrieve data so in this case SQL 
 	- Specialized modeling strategies to optimize retrieval for different use cases 
 	- More fine-tune control over the transformation of the data into useful data structures or reports 
 
 - Normally a database infers someone is usually using a a relational row oriented data store
+ -->
+![Muki](./database-services.png)
 
 ## Key-Value store
 
@@ -29,7 +31,7 @@
 - A document could be an XML but more commonly is Json or Json like document stores are subclasses of key value stores
 - Components of Document store compared to Relational DB
 
-[Database](db1.png)
+
 
 ## AWS DynamoDB
 
